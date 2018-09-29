@@ -48,7 +48,7 @@ struct influxdb::async_api::simple_db::impl {
         started = true;
 
         auto incoming_requests = subj.get_observable()
-            .map([](auto&& line) {
+            .map([](influxdb::api::line&& line) {
                 return line.get();
             });
 
