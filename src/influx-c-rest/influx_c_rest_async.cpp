@@ -31,7 +31,7 @@ extern "C" {
         try {
 
             influx_c_rest_async_t *res = new influx_c_rest_async_t {
-                std::make_unique<influxdb::async_api::simple_db>(url, name)
+                influxdb::make_unique<influxdb::async_api::simple_db>(url, name)
             };
 
             assert(res);

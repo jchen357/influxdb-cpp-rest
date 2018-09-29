@@ -26,7 +26,7 @@ struct influxdb::api::simple_db::impl {
 };
 
 influxdb::api::simple_db::simple_db(std::string const& url, std::string const& name) :
-    pimpl(std::make_unique<impl>(url, name))
+    pimpl(influxdb::make_unique<impl>(url, name))
 {
 }
 

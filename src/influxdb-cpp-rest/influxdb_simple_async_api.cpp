@@ -93,7 +93,7 @@ influxdb::async_api::simple_db::simple_db(std::string const& url, std::string co
 }
 
 influxdb::async_api::simple_db::simple_db(std::string const & url, std::string const & name, unsigned window_max_lines, unsigned window_max_ms) :
-    pimpl(std::make_unique<impl>(url, name, window_max_lines, window_max_ms))
+    pimpl(influxdb::make_unique<impl>(url, name, window_max_lines, window_max_ms))
 {
 }
 

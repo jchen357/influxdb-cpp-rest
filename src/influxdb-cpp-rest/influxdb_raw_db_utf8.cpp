@@ -8,6 +8,7 @@
 
 #include "influxdb_raw_db_utf8.h"
 #include "influxdb_raw_db.h"
+#include "influxdb_line.h"
 
 #include <cpprest/http_client.h>
 
@@ -28,7 +29,7 @@ public:
 };
 
 influxdb::raw::db_utf8::db_utf8(std::string const & url, std::string const& name) :
-    pimpl(std::make_unique<impl>(url, name))
+    pimpl(influxdb::make_unique<impl>(url, name))
 {
 }
 

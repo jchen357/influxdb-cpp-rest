@@ -9,6 +9,7 @@
 #include "influx_c_rest_query.h"
 
 #include "../influxdb-cpp-rest/influxdb_raw_db_utf8.h"
+#include "../influxdb-cpp-rest/influxdb_line.h"
 
 #include <memory>
 #include <cassert>
@@ -29,7 +30,7 @@ extern "C" {
 
         try {
             influx_c_rest_query_t *res = new influx_c_rest_query_t {
-                std::make_unique<influxdb::raw::db_utf8>(url, name)
+                influxdb::make_unique<influxdb::raw::db_utf8>(url, name)
             };
 
             assert(res);
